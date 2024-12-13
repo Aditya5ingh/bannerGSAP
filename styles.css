@@ -80,3 +80,8 @@ section {
   height: 138px;
   overflow: hidden;
 }
+.tria {
+  position: absolute;
+
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+}

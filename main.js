@@ -6,13 +6,44 @@ let section = document.getElementById("section"),
   dot = document.querySelector(".dot"),
   text = document.querySelector(".title1"),
   monk = document.querySelector(".monkey"),
-  radi = document.querySelector(".circledot"),
-  text1 = document.querySelector(".title2");
+  // radi = document.querySelector(".circledot"),
+  text1 = document.querySelector(".title2"),
+  tri = document.querySelector(".tria");
 
-gsap.set(radi, {
-  attr: { r: "100%" },
-});
+// let x = window.innerWidth;
+// let y = window.innerHeight;
+// console.log(y);
+// // gsap.set(radi, {
+// //   attr: { r: "100%" },
+// // });
+// const s1x = 5 * x;
+// const s1y = -((5 / 2) * y);
+// const s2x = 5 * x;
+// const s2y = 5 * y;
+// const s3x = -5 * x;
+// const s3y = 5 * y;
+// const pointStart = "50%,25% 25%,75% 75%,75%";
+// const pointStart = `${s1x},${s1y} ${s2x},${s2y} ${s3x},${s3y}`;
+// console.log(pointStart);
 
+// const p1x = eval(x / 2);
+// const p1y = eval(y / 2);
+// const endPoint = `${p1x},${p1y} ${p1x},${p1y} ${p1x},${p1y}`;
+gsap.set(
+  tri,
+  {
+    scale: 7,
+    transformOrigin: "center ",
+  }
+  // xPercent: 50,
+  // yPercent: 50,
+  // width: "142vmax", // ensures it fills every part of the screen.
+  // height: "142vmax",
+  // xPercent: -50, // center the dot in the section area
+  // yPercent: -50,
+  // top: "50%",
+  // left: "50%",
+);
 let tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: section,
@@ -43,15 +74,18 @@ let tl1 = gsap.timeline({
 
 tl1
   .fromTo(
-    radi,
+    tri,
     {
-      attr: { r: "1000" },
+      scale: 7,
+      transformOrigin: "center ",
     },
     {
-      attr: { r: "00" },
+      scale: 0,
+      transformOrigin: "center ",
       duration: 4,
     }
   )
+
   .fromTo(
     text,
     {
